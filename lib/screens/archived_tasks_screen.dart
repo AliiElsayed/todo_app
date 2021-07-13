@@ -4,6 +4,7 @@ import 'package:todo_app/bloc_cubit/main_bloc_cubit.dart';
 import 'package:todo_app/bloc_cubit/states.dart';
 import 'package:todo_app/widgets/build_item.dart';
 import 'package:todo_app/widgets/no_data_indicator.dart';
+
 class ArchivedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -11,7 +12,9 @@ class ArchivedScreen extends StatelessWidget {
       listener: (context, state) {},
       builder: (context, state) {
         return AppCubit.getObj(context).archivedTasks.length == 0
-            ? NoDataIndicator(caption: 'No Archived Tasks',)
+            ? NoDataIndicator(
+                caption: 'No Archived Tasks',
+              )
             : Container(
                 child: ListView.separated(
                     itemBuilder: (context, index) {

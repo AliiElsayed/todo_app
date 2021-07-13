@@ -14,11 +14,15 @@ class BuildListItem extends StatelessWidget {
         color: Colors.redAccent,
         child: Row(
           children: [
-            Icon(Icons.delete, size: 45.0,color: Colors.black54,),
+            Icon(
+              Icons.delete,
+              size: 45.0,
+              color: Colors.black54,
+            ),
           ],
         ),
       ),
-      onDismissed: (direction){
+      onDismissed: (direction) {
         AppCubit.getObj(context).deleteData(taskItem['id']);
       },
       child: Container(
@@ -62,7 +66,8 @@ class BuildListItem extends StatelessWidget {
                 size: 35.0,
               ),
               onPressed: () {
-                AppCubit.getObj(context).updateData(status: 'done', id: taskItem['id']);
+                AppCubit.getObj(context)
+                    .updateData(status: 'done', id: taskItem['id']);
               },
             ),
             SizedBox(
@@ -75,7 +80,8 @@ class BuildListItem extends StatelessWidget {
                 size: 35.0,
               ),
               onPressed: () {
-                AppCubit.getObj(context).updateData(status: 'archive', id: taskItem['id']);
+                AppCubit.getObj(context)
+                    .updateData(status: 'archive', id: taskItem['id']);
               },
             ),
           ],

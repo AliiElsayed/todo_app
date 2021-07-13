@@ -12,7 +12,9 @@ class DoneScreen extends StatelessWidget {
       listener: (context, state) {},
       builder: (context, state) {
         return AppCubit.getObj(context).doneTasks.length == 0
-            ? NoDataIndicator(caption: 'No Done Tasks ..',)
+            ? NoDataIndicator(
+                caption: 'No Done Tasks ..',
+              )
             : Container(
                 child: ListView.separated(
                     itemBuilder: (context, index) {

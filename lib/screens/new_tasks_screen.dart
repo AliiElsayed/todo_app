@@ -17,7 +17,9 @@ class TasksScreen extends StatelessWidget {
               )
             : Container(
                 child: AppCubit.getObj(context).newTasks.length == 0
-                    ? NoDataIndicator(caption: 'No Tasks To show...\nStart adding Some ...',)
+                    ? NoDataIndicator(
+                        caption: 'No Tasks To show...\nStart adding Some ...',
+                      )
                     : ListView.separated(
                         itemBuilder: (context, index) {
                           return BuildListItem(
